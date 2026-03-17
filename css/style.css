@@ -9,7 +9,6 @@ html {
 }
 
 body {
-    padding: 0, 70px, 0, 0;
     font-family: 'Inter', sans-serif;
     background: #050507;
     color: #eaeaea;
@@ -26,6 +25,7 @@ img.logo {
     justify-content: center;
     align-items: center;
     font-size: 18px;
+    gap: 15px;
 }
 
 .text-center {
@@ -82,7 +82,6 @@ nav {
 
 nav a {
     color: white;
-    margin-left: 15px;
     text-decoration: none;
     opacity: 0.6;
     transition: 0.3s;
@@ -468,11 +467,9 @@ footer {
 /* RESPONSYWNOŚĆ MOBILE */
 @media (max-width: 768px) {
 
-   
-
     /* HERO */
     .hero h1 {
-        font-size: 3rem;
+        font-size: 2.2rem;
         /* zmniejszamy duży nagłówek */
     }
 
@@ -485,10 +482,17 @@ footer {
         max-width:70px;
     }
 
+    nav a {
+        display: inline-block; /* lub block/flex, jeśli chcesz kontrolować szerokość */
+        white-space: normal;   /* pozwala zawijać tekst w kilka wierszy */
+        word-wrap: break-word; /* opcjonalnie: łamanie długich słów */
+        width: auto;           /* dopasowuje się do treści, lub ustaw max-width */
+        text-align: center;    /* jeśli chcesz wyśrodkować zawinięty tekst */
+    }
 
     .top-bar-nav{
         font-size: 1rem;
-        margin-right:10px;
+        gap: 15px;
     }
 
     .hero p {
