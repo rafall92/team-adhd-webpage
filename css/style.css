@@ -163,6 +163,8 @@ nav a.active {
 .about {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 50px;
     font-family: "Open Sans", sans-serif;
     font-size: 16px;
@@ -173,26 +175,20 @@ nav a.active {
     width: 75%;
 }
 
-
-
 .photo-with-orange-back {
     position: relative;
     display: inline-block;
-    max-width: 100%;
+    flex: 1 1 580px;
+    max-width: 570px
 }
 
 .orange-square {
     position: absolute;
     top: -50px;
-    /* ile pomarańczowego wystaje u góry */
     left: 30%;
-    /* ile pomarańczowego wystaje z lewej */
     width: calc(70% + 50px);
-    /* większy kwadrat pod spodem */
     height: calc(100% + 70px);
-    /* większy kwadrat pod spodem */
     background: #FF9F00;
-    /* dokładnie ten pomarańczowy z Twojego zdjęcia */
     border-radius: 12px;
     z-index: 1;
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.45);
