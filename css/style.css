@@ -1,0 +1,470 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    padding: 0, 70px, 0, 0;
+    font-family: 'Inter', sans-serif;
+    background: #050507;
+    color: #eaeaea;
+    overflow-x: hidden;
+}
+
+img.logo {
+    width: auto;
+    max-height: 70px;
+}
+
+.top-bar-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: 4rem;
+    color: #b00b0b;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow:
+        0 0 5px #0ff,
+        0 0 10px #0ff,
+        0 0 20px #0ff,
+        0 0 40px #0ff,
+        0 0 80px #0ff;
+    animation: flicker 1.5s infinite alternate;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+@keyframes flicker {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.8;
+    }
+}
+
+/* NAV */
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    margin-left: 25px;
+    text-decoration: none;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    opacity: 1;
+    color: #ff2d2d;
+}
+
+nav a.active {
+    color: #ff2d2d;
+    text-shadow: 0 0 10px #ff2d2d;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.1), #050507),
+        url("https://scontent-waw2-2.xx.fbcdn.net/v/t39.30808-6/475709016_1386482756139448_4845599390193034580_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=2a1932&_nc_ohc=zURZaVqVAYoQ7kNvwHAAYgG&_nc_oc=AdlRBTwGNNxYdhByCxgBNlFNB1OMy81AX2CmqHclU5bvHuxH7OJ1r1PaRSsB5boL8ek&_nc_zt=23&_nc_ht=scontent-waw2-2.xx&_nc_gid=snIjxIRZQhTZrUdw3kSZ2Q&_nc_ss=8&oh=00_Afyg7grr-Dpwhg6ABxToEz40YXKZAd7l2M7YLPzH02gzNQ&oe=69BEFE38") center/cover no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero .nav {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 36px
+}
+
+.hero h1 {
+    font-size: 150px;
+}
+
+.hero p {
+    opacity: 0.7;
+    margin-top: 10px;
+}
+
+.btn {
+    margin-top: 25px;
+    padding: 14px 35px;
+    background: #ff2d2d;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    box-shadow: 0 0 25px #ff2d2d88;
+}
+
+/* SECTIONS alternating */
+.section {
+    padding: 120px 20px;
+}
+
+.section:nth-child(even) {
+    background: #07070c;
+}
+
+.section:nth-child(odd) {
+    background: #0a0a12;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.about {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    line-height: 1.5rem;
+}
+
+.about img {
+    width: 75%;
+}
+
+
+
+.photo-with-orange-back {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+}
+
+.orange-square {
+    position: absolute;
+    top: -50px;
+    /* ile pomarańczowego wystaje u góry */
+    left: 30%;
+    /* ile pomarańczowego wystaje z lewej */
+    width: calc(70% + 50px);
+    /* większy kwadrat pod spodem */
+    height: calc(100% + 70px);
+    /* większy kwadrat pod spodem */
+    background: #FF9F00;
+    /* dokładnie ten pomarańczowy z Twojego zdjęcia */
+    border-radius: 12px;
+    z-index: 1;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.45);
+}
+
+.photo-with-orange-back img {
+    position: relative;
+    z-index: 2;
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+    border: 8px solid #ffffff;
+    /* biały rant zdjęcia jak na Twoim zdjęciu */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s ease;
+}
+
+.photo-with-orange-back:hover img {
+    transform: scale(1.03);
+    /* lekkie "wyskoczenie" przy najechaniu */
+}
+
+/* TEAM */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.player {
+    text-align: center;
+    transition: 0.3s;
+}
+
+.player img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 2px solid #1a1a22;
+    transition: 0.3s;
+}
+
+.player:hover img {
+    transform: scale(1.1);
+    border-color: #ff2d2d;
+}
+
+.player h4 {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.player p {
+    font-size: 12px;
+    opacity: 0.6;
+}
+
+/* socials icons */
+.social {
+    margin-top: 5px;
+    font-size: 11px;
+    color: #ff2d2d;
+    text-decoration: none;
+}
+
+/* INFO */
+
+.test {
+    display: flex;
+    position: relative;
+    /* koniecznie, jeśli ::after jest position: absolute */
+    overflow: hidden;
+}
+
+.info-section {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    margin-top: -200px;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.info-card {
+    background: #f5f5f7;
+    color: #333;
+    padding: 0;
+    width: 300px;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-20px);
+}
+
+.card-inner {
+    position: relative;
+    overflow: hidden;
+    /* ← TYLKO TO PRZYTNIE DOLNY ::after */
+    padding: 50px 25px 30px;
+    /* stare paddingi przenosimy tutaj */
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Ikona zostaje na górze i NIE jest przycinana */
+.icon {
+    width: 80px;
+    height: 80px;
+    background: #ff2d2d;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 42px;
+    color: white;
+
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    /* na wszelki wypadek */
+}
+
+/* DOLNY ::after – przenosimy na .card-inner */
+.card-inner::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 20px;
+    height: 20px;
+    background: red;
+}
+
+.info-card:hover .card-inner {
+    overflow: visible;
+    /* ← trójkąt wyskakuje spod spodu */
+}
+
+/* reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 1s;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* particles */
+#particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* YT */
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    /* możesz zmienić szerokość */
+    margin: 60px auto;
+    /* odstęp od kart */
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Responsywny stosunek 16:9 */
+.video-wrapper::before {
+    content: '';
+    display: block;
+    padding-top: 56.25%;
+    /* 16:9 */
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    opacity: 0.4;
+}
+
+/* GAMES */
+.games {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px
+}
+
+.game {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    height: 180px;
+    cursor: pointer;
+    border: 1px solid;
+}
+
+.game img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    transition: 0.4s;
+    filter: brightness(0.8);
+}
+
+.game:hover img {
+    transform: scale(1.1);
+    filter: brightness(0.3);
+}
+
+.game-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.game h3 {
+    font-size: 18px
+}
+
+.game p {
+    font-size: 12px;
+    opacity: .7
+}
+
+/* SHINE EFFECT */
+.game::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+    transform: skewX(-20deg);
+}
+
+.game:hover::after {
+    animation: shine 0.8s;
+}
+
+@keyframes shine {
+    100% {
+        left: 125%
+    }
+}
