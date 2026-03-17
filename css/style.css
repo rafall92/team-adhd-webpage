@@ -82,7 +82,7 @@ nav {
 
 nav a {
     color: white;
-    margin-left: 25px;
+    margin-left: 15px;
     text-decoration: none;
     opacity: 0.6;
     transition: 0.3s;
@@ -144,7 +144,7 @@ nav a.active {
 
 /* SECTIONS alternating */
 .section {
-    padding: 120px 20px;
+    padding: 60px 20px;
 }
 
 .section:nth-child(even) {
@@ -462,5 +462,131 @@ footer {
 @keyframes shine {
     100% {
         left: 125%
+    }
+}
+
+/* RESPONSYWNOŚĆ MOBILE */
+@media (max-width: 768px) {
+
+   
+
+    /* HERO */
+    .hero h1 {
+        font-size: 3rem;
+        /* zmniejszamy duży nagłówek */
+    }
+
+    nav{
+        padding: 0px 0px;
+        margin: 0;
+    }
+
+    nav img {
+        max-width:70px;
+    }
+
+
+    .top-bar-nav{
+        font-size: 1rem;
+        margin-right:10px;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        margin-top: 15px;
+    }
+
+    .hero .nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* ABOUT */
+    .about {
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+    }
+
+    .about img {
+        width: 100%;
+        max-width: 350px;
+        margin: auto;
+    }
+
+    .photo-with-orange-back {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .orange-square {
+        top: -30px;
+        left: 10%;
+        width: 80%;
+        height: calc(100% + 40px);
+    }
+
+    /* TEAM */
+    .team-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 15px;
+    }
+
+    .player img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .player h4 {
+        font-size: 12px;
+    }
+
+    .player p {
+        font-size: 10px;
+    }
+
+    /* INFO SECTION */
+    .info-section {
+        flex-direction: column;
+        gap: 70px;
+        margin-top: 50px;
+        /* mniej offsetu na mobilu */
+    }
+
+    .info-card {
+        width: 90%;
+        /* dopasowuje się do ekranu */
+        margin: auto;
+    }
+
+    /* BUTTONS */
+    .btn {
+        padding: 10px 25px;
+        font-size: 14px;
+    }
+
+    /* VIDEO */
+    .video-wrapper {
+        max-width: 100%;
+        margin: 40px auto;
+    }
+
+    /* GAMES */
+    .games {
+        grid-template-columns: 1fr;
+        /* jeden element na szerokość */
+        gap: 20px;
+    }
+
+    .game {
+        height: 150px;
+    }
+
+    .game h3 {
+        font-size: 16px;
+    }
+
+    .game p {
+        font-size: 10px;
     }
 }
