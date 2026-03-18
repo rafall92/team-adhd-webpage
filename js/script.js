@@ -47,7 +47,7 @@ window.addEventListener("scroll", () => {
     sections.forEach(sec => {
         const top = window.scrollY;
         const height = sec.offsetHeight;
-        const offset = sec.offsetTop - 0.6 * sec.offsetHeight;
+        const offset = sec.offsetTop - 0.4 * sec.offsetHeight;
 
         if (top >= offset && top < offset + height) {
             current = sec.getAttribute("id");
@@ -64,4 +64,4 @@ window.addEventListener("scroll", () => {
 
 if (window.location.pathname.endsWith("index.html")) {
     window.location.replace("/");
-  }
+}
